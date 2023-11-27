@@ -52,6 +52,7 @@ ylim([-2.5, 17]);
 axis equal;
 %% 
 function Likelihood=Gauss(data,base,thegma,Index)
+Likelihood=zeros(97,1);
     for i=1:97
         p=1;
         for j=1:length(Index)
@@ -60,7 +61,8 @@ function Likelihood=Gauss(data,base,thegma,Index)
                  %p=p+(data(Index(j)+1)-base(i,Index(j)))*(data(Index(j)+1)-base(i,Index(j)));
             end
         end
-        Likelihood(i)=p*p;
+        %Likelihood(i)=1/sqrt(p);
+        Likelihood(i)=p^2;
     end
 end
 %% 

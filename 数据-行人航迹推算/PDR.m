@@ -15,9 +15,13 @@ draw_Yaw(time,[Yaw_M,Yaw_G]);
 len=Len(fx,fy,fz);
 [Step_Mark,Time_Mark]=Detect_step(len,9.2,time);
 %% 
-% plot(time,len)
-% hold on
-% scatter(Time_Mark(:,1),Time_Mark(:,2),"*");
+plot(time,len,'DisplayName','Accel')
+hold on
+scatter(Time_Mark(:,1),Time_Mark(:,2),"*",'DisplayName','step');
+xlabel("time/s")
+ylabel("Acceleration/m·s^{-2}")
+title("Steps")
+legend
 %% 
 Point_M=Cal_PDR(Yaw_M,0.7/4,Step_Mark);
 Point_G=Cal_PDR(Yaw_G,0.7/4,Step_Mark);
@@ -231,7 +235,7 @@ function draw_Yaw(X1, YMatrix1)
     hold(axes1,'on');
     
     % 使用 plot 的矩阵输入创建多个 line 对象
-    plot1 = plot(X1,YMatrix1,'LineWidth',1);
+    plot1 = plot(X1,rad2deg(YMatrix1),'LineWidth',1);
     set(plot1(1),'DisplayName','Yaw_M');
     set(plot1(2),'DisplayName','Yaw_G','LineStyle','--','Color',[1 0 0]);
     

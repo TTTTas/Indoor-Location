@@ -21,7 +21,7 @@ opts = setvaropts(opts, "Var4", "WhitespaceRule", "preserve");
 opts = setvaropts(opts, "Var4", "EmptyFieldRule", "auto");
 
 % 导入数据
-tbl = readtable("E:\文件\复习\室内定位\数据-信号强度指纹识别\rp_loc.txt", opts);
+tbl = readtable("rp_loc.txt", opts);
 
 %% 转换为输出类型
 PRN = tbl.PRN;
@@ -47,7 +47,7 @@ opts.EmptyLineRule = "read";
 opts.LeadingDelimitersRule = "ignore";
 
 % 导入数据
-OBS_DATA = readtable("E:\文件\复习\室内定位\数据-信号强度指纹识别\test1_with_ref.data", opts);
+OBS_DATA = readtable("test1_with_ref.data", opts);
 
 %% 转换为输出类型
 OBS_DATA = table2array(OBS_DATA);
@@ -72,7 +72,7 @@ opts.EmptyLineRule = "read";
 opts.LeadingDelimitersRule = "ignore";
 
 % 导入数据
-database = readtable("E:\文件\复习\室内定位\数据-信号强度指纹识别\database.data", opts);
+database = readtable("database.data", opts);
 
 %% 转换为输出类型
 database = table2array(database);

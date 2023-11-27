@@ -42,8 +42,13 @@ function [data,t] = Locat2D(base,D,time,thresh)
     'Marker','.',...
     'LineWidth',1,...
     'FaceColor','none',...
-    'EdgeColor','flat')
+    'EdgeColor','flat', ...
+    'DisplayName','距离交会轨迹')
     axis equal;grid on;colorbar
     hold on
-    scatter(base(:,1),base(:,2),'MarkerEdgeColor',[1 0 0],'MarkerFaceColor',[1 0 0]);
+    scatter(base(:,1),base(:,2),'MarkerEdgeColor',[1 0 0],'MarkerFaceColor',[1 0 0],'DisplayName','基站');
+    xlabel("x(m)")
+    ylabel("y(m)")
+    title("距离交会解算结果: 2D")
+    legend
 end

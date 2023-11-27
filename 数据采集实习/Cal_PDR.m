@@ -5,7 +5,7 @@ function Pos=Cal_PDR(start_pos,start_ang,step_len,omegax, omegay, omegaz, fx, fy
     Pos=zeros(length(mark),2);
     p=start_pos;
     for i=1:length(mark)
-        p=p+step_len*[sin(Yaw(mark(i))),cos(Yaw(mark(i)))];
+        p=p+step_len*[cos(-Yaw(mark(i))),sin(-Yaw(mark(i)))];
         Pos(i,1:2)=p;
     end
     figure;
@@ -14,6 +14,11 @@ function Pos=Cal_PDR(start_pos,start_ang,step_len,omegax, omegay, omegaz, fx, fy
     'Marker','.',...
     'LineWidth',1,...
     'FaceColor','none',...
-    'EdgeColor','flat')
+    'EdgeColor','flat', ...
+    'DisplayName','PDR轨迹')
     axis equal;grid on;colorbar
+    xlabel("x(m)")
+    ylabel("y(m)")
+    title("PDR result from Gyro")
+    legend
 end

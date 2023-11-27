@@ -21,7 +21,7 @@ opts.ExtraColumnsRule = "ignore";
 opts.EmptyLineRule = "read";
 
 % 导入数据
-tbl = readtable("E:\文件\复习\室内定位\数据-行人航迹推算\sensors_matrix.txt", opts);
+tbl = readtable("sensors_matrix.txt", opts);
 
 %% 转换为输出类型
 time = tbl.time;
